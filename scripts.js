@@ -64,22 +64,48 @@ const testeArrow = () => console.log("testou!")
 
 testeArrow()
 
-const user = {
-    name: "Theo",
-    sayUserName() {
-        var self = this
-        setTimeout(function() {
-            console.log(self)
-            console.log("Username: " + self.name)
-        }, 500)
-    },
-    sayUserNameArrow() {
-        setTimeout(() => {
-            console.log(this)
-            console.log("Username: " + this.name)
-        }, 700)
-    }
-}
+// const user = {
+//     name: "Theo",
+//     sayUserName() {
+//         var self = this
+//         setTimeout(function() {
+//             console.log(self)
+//             console.log("Username: " + self.name)
+//         }, 500)
+//     },
+//     sayUserNameArrow() {
+//         setTimeout(() => {
+//             console.log(this)
+//             console.log("Username: " + this.name)
+//         }, 700)
+//     }
+// }
 
-user.sayUserName()
-user.sayUserNameArrow()
+// user.sayUserName()
+// user.sayUserNameArrow()
+
+// 3- Filter
+const arr  = [1, 2, 3, 4, 5]
+
+console.log(arr)
+
+const highNumbers = arr.filter((n) => {
+    if(n >= 3) {
+        return n
+    }
+})
+
+console.log(highNumbers)
+
+const users = [
+    { name: "Leonardo", available: true },
+    { name: "Pedro", available: false },
+    { name: "Marcos", available: false },
+    { name: "Júlio", available: true },
+]
+
+const availableUsers = users.filter((user) => user.available)
+const notAvailableUsers = users.filter((user) => !user.available)
+
+console.log(availableUsers)
+console.log(notAvailableUsers)
